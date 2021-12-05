@@ -11,7 +11,7 @@ exports.taskIdGetController = async(ctx)=>{
         const task = board.find(b=>b.id===ctx.params.taskId)
         console.log(task);
         ctx.status = HTTP_STATUS_CODES.OK
-        ctx.body = JSON.stringify(task)
+        ctx.body = task
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;

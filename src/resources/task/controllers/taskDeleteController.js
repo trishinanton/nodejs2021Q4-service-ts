@@ -9,7 +9,7 @@ exports.taskDeleteController = async(ctx)=>{
         const tasks = await getTasks()
         const index = tasks.findIndex(u=>u.id===ctx.params.taskId)
         if (index<=0){
-            ctx.status = HTTP_STATUS_CODES.NOT_FOUND
+            ctx.status = 404
             ctx.body = HTTP_RESPONSE_BODY.TASK_NOT_FOUND
         }else{
             await deleteTask(index)

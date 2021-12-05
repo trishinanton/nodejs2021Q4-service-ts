@@ -7,9 +7,9 @@ exports.taskUpdateController = async(ctx)=>{
     try{
         const tasks = await getTasks()
         const index = tasks.findIndex(u=>u.id===ctx.params.taskId)
-        await updateTask(ctx.request.body,index)
-        ctx.status = HTTP_STATUS_CODES.OK
-        ctx.body = `Board with id${  ctx.params.id   }success update`
+        const upTask =  updateTask(ctx.request.body,index,ctx.params.taskId)
+        ctx.status = 200
+        ctx.body = upTask
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;

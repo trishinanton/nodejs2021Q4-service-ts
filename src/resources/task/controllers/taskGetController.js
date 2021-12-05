@@ -9,7 +9,7 @@ exports.taskGetController = async(ctx)=>{
         const allTasks = await getTasks()
         const task = allTasks.filter(t=>t.boardId === ctx.params.boardId)
         ctx.status = HTTP_STATUS_CODES.OK
-        ctx.body = JSON.stringify(task)
+        ctx.body = task
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;

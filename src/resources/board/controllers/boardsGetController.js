@@ -8,7 +8,7 @@ exports.boardsGetController = async(ctx)=>{
     try{
         const boards = await getBoards()
         ctx.status = HTTP_STATUS_CODES.OK
-        ctx.body = JSON.stringify(boards)
+        ctx.body = boards
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;

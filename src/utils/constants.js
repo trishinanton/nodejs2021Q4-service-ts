@@ -10,10 +10,11 @@ const HTTP_RESPONSE_BODY = {
     BOARD_SUCCESS_DELETE: 'Board success delete',
     BOARD_SUCCESS_BOARD: 'Board success added',
     TASK_SUCCESS_TASK: 'Task success added',
-    INTERVAL_SERVER_ERROR: 'Interval error'
+    INTERVAL_SERVER_ERROR: 'Interval error',
+    USER_NOT_FOUND:'User not found'
 };
 const HTTP_RESPONSE_TYPE = {
-    RESPONSE: 'application/json'
+    RESPONSE: 'Content-Type: application/json'
 }
 
 module.exports = {

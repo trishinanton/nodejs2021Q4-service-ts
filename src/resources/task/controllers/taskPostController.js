@@ -9,7 +9,7 @@ exports.taskPostController = async(ctx)=>{
         const task = new Task({boardId:ctx.params.boardId})
         await addTask(task)
         ctx.status = HTTP_STATUS_CODES.CREATE
-        ctx.body = HTTP_RESPONSE_BODY.TASK_SUCCESS_TASK
+        ctx.body = task
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;

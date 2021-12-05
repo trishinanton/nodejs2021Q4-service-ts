@@ -4,7 +4,7 @@ const { deleteBoard } = require('../board_repository');
 const { getBoards } = require('../board_repository');
 
 const { HTTP_RESPONSE_BODY } = require('../../../utils/constants');
-const { HTTP_STATUS_CODES } = require('../../../utils/constants');
+
 
 
 exports.boardDeleteController = async(ctx)=>{
@@ -17,11 +17,11 @@ exports.boardDeleteController = async(ctx)=>{
         await deleteTask(indexTask)
 
         await deleteBoard(index)
-        ctx.status = HTTP_STATUS_CODES.DELETE
+        ctx.response.status = 204;
         ctx.body = HTTP_RESPONSE_BODY.BOARD_SUCCESS_DELETE
     }catch (error){
         console.error('err', error);
-        ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;
+        ctx.response.status = 404;
         ctx.body = HTTP_RESPONSE_BODY.INTERVAL_SERVER_ERROR;
     }
 }
