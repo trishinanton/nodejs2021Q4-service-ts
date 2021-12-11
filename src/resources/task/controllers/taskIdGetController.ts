@@ -12,8 +12,13 @@ export const taskIdGetController = async(ctx:Context)=>{
     try{
         const tasks:TasksType = tasksArray
         const task = tasks.find(b=>b.id===ctx.params.taskId)
-        ctx.status = HTTP_STATUS_CODES.OK
-        ctx.body = task
+        if(task){
+            ctx.status = HTTP_STATUS_CODES.OK
+            ctx.body = task
+        }else{
+            ctx.status = 404;
+        }
+
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;

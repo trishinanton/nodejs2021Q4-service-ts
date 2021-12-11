@@ -12,8 +12,12 @@ export const boardIdGetController = async(ctx:Context)=>{
     try{
         const boards:BoardsType = await getBoards()
         const findBoard = boards.find(u=>u.id===ctx.params.id)
-        // if(!findBoard) ctx.throw(404, 'Board not found!')
-        ctx.body = findBoard
+        if(findBoard){
+            ctx.body = findBoard
+        }else{
+            ctx.status = 404;
+        }
+
     }catch (error){
         console.error('err', error);
         ctx.status = HTTP_STATUS_CODES.INTERVAL_SERVER_ERROR;
