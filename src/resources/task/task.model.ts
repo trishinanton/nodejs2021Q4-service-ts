@@ -5,11 +5,11 @@ import { v1 as uuid } from 'uuid';
  * @param id first term string
  * @param title second term string
  * @param order third term number
- * @param description third term string
- * @param userId third term string
- * @param boardId third term string
- * @param columnId third term string
- * @param columns third term ColumnsType
+ * @param description four term string
+ * @param userId five term string
+ * @param boardId six term string
+ * @param columnId seven term string
+ * @param columns eight term ColumnsType
  */
 export class Task {
   id: string
