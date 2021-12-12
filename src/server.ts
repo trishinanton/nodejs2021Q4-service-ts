@@ -1,8 +1,8 @@
 import { app } from './app';
 
-const { PORT } = require('./common/config');
+import  obj  from './common/config';
 
 
-app.listen(PORT,  () =>{
-  console.log(`App is running on http://localhost:${PORT}`)
+app.listen(obj.PORT,  () =>{
+  console.log(`App is running on http://localhost:${obj.PORT}`)
 });
